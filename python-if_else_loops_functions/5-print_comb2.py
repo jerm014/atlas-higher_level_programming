@@ -2,6 +2,9 @@
 for i in range(0, 100):
     print("{:02d}".format(i), end="")
     if i < 99:
-        print(", ", end="")
+        comma = ", "
+        cr = ""
     else:
-        print()
+        comma = ""
+        cr = chr(10)
+    print(comma.format(), end=cr)
