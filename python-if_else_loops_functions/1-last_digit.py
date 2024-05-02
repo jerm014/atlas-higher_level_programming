@@ -7,7 +7,7 @@ else:
     last_digit = number % -10
 res = "Last digit of " + str(number) + " is " + str(last_digit)
 if last_digit == 0:
-    res =+ " and is 0"
+    res += " and is 0"
 elif last_digit > 5:
     res += " and is greater than 5"
 else:
