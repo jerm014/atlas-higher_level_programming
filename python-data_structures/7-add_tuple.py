@@ -16,6 +16,4 @@ def add_tuple(a=(), b=()):
     elif len(b) == 1:
         b[1] = 0
 
-    c[0] = a[0] + b[0]
-    c[1] = a[1] + b[1]
-    return c
+    return tuple(a[0] + b[0], a[1] + b[1])
