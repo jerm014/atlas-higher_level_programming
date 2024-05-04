@@ -6,7 +6,7 @@ if __name__ != '__main__':
 def max_integer(a=[]):
     if len(a) == 0:
         return "None"
-    res = 0
+    res = a[0]
     for i in a:
         if i > res:
             res = i
