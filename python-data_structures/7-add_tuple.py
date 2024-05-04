@@ -18,4 +18,4 @@ def add_tuple(a=(), b=()):
     if len(b) >= 2:
         res4 = b[1]
 
-    return tuple((res1 + res2, res3 + res4))
+    return tuple((res1 + res3, res2 + res4))
