@@ -2,6 +2,7 @@
 if __name__ != '__main__':
     exit
 
+
 def no_c(a):
     res = ""
     for i in range(0, len(a)):
