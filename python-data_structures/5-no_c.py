@@ -9,4 +9,3 @@ def no_c(a):
         if a[i] != "c" and a[i] != "C":
             res += a[i]
     return res
-
