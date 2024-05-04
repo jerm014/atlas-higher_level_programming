@@ -4,7 +4,7 @@ if __name__ != '__main__':
 
 
 def add_tuple(a=(), b=()):
-    c = []
+    c = [0, 0]
 
     if len(a) == 0:
         a = [0, 0]
