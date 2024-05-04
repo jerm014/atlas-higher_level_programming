@@ -4,16 +4,18 @@ if __name__ != '__main__':
 
 
 def add_tuple(a=(), b=()):
-    c = (0, 0)
+    res1 = 0
+    res2 = 0
+    res3 = 0
+    res4 = 0
 
-    if len(a) == 0:
-        a = [0, 0]
-    elif len(a) == 1:
-        a[1] = 0
+    if len(a) => 1:
+        res1 = a[0]
+    if len(a) => 2:
+        res2 = a[1]
+    if len(b) => 1:
+        res3 = b[0]
+    if len(b) => 2:
+        res4 = b[1]
 
-    if len(b) == 0:
-        b = [0, 0]
-    elif len(b) == 1:
-        b[1] = 0
-
-    return tuple((a[0] + b[0], a[1] + b[1]))
+    return tuple((res1 + res2, res3 + res4))
