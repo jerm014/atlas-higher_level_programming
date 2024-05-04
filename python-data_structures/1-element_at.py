@@ -8,4 +8,4 @@ def element_at(a, b):
     if b < 0 or b > last_element:
         return "None"
     else:
-        return a(b)
+        return a[b]
