@@ -6,7 +6,7 @@ if __name__ != '__main__':
 def replace_in_list(a, b, c):
     last_element = len(a) - 1
     if b < 0 or b > last_element:
-        return "None"
+        return a
     else:
         a[b] = c
         return a
