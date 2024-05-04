@@ -5,6 +5,6 @@ if __name__ != '__main__':
 
 def print_reversed_list_integer(a=[]):
     i = len(a) - 1
-    while i > 0:
+    while i >= 0:
         print("{:d}".format(a[i]))
         i -= 1
