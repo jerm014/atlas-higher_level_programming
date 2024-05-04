@@ -4,4 +4,4 @@ if __name__ != '__main__':
 
 def print_list_integer(a):
     for i in a:
-        print("{}".format(i))
+        print("{:d}".format(i))
