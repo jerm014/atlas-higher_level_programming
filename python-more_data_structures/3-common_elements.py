@@ -15,4 +15,3 @@ def common_elements(set_1, set_2):
             if x >= 0:
                 res.append(i)
     return res
-
