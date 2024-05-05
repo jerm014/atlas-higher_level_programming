@@ -23,5 +23,5 @@ def only_diff_elements(set_1, set_2):
         finally:
             if x == -1:
                 res.append(i)
-    
+
     return res
