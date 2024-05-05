@@ -7,5 +7,7 @@ def square_matrix_simple(a=[]):
     return list(map(square_matrix, a))
 
 def square_matrix(a):
-    sqrt = lambda _i : _i ** 2
-    return list(map(sqrt, a))
+    return list(map(pow2, a))
+
+def pow2(a):
+    return a ** 2
