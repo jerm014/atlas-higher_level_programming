@@ -4,4 +4,4 @@ if __name__ != '__main__':
 
 
 def raise_exception_msg(message=""):
-    raise NameException(message)
+    raise NameError(message)
