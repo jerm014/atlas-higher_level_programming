@@ -7,10 +7,10 @@ def safe_print_list(a=[], x=0):
     res = 0
     try:
         for i in a:
-            print(i, end="")
-            res += 1
             if res == x:
                 break
+            print(i, end="")
+            res += 1
     except:
         return res
     finally:
