@@ -11,7 +11,7 @@ def safe_print_list(a=[], x=0):
                 break
             print(i, end="")
             res += 1
-    except:
+    except Exception as e:
         return res
     finally:
         print()
