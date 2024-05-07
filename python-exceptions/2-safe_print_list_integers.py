@@ -10,7 +10,7 @@ def safe_print_list_integers(a=[], b=0):
             print("{:d}".format(a[i]), end="")
             printed += 1
     except (TypeError, ValueError):
-        pass
+        continue
     
     print()
     return printed
