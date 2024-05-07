@@ -10,6 +10,7 @@ def list_division(a, b, c):
     res = []
     for i in range(c):
         try:
+            div = 0
             div = a[i] / b[i]
         except IndexError:
             print(errors["IndexError"])
