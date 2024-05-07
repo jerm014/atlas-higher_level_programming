@@ -13,8 +13,8 @@ def safe_print_list_integers(a=[], b=0):
                 return printed
     except (TypeError, ValueError):
         pass
-    except (IndexError) as e:
-        raise IndexError(e)
+    #except (IndexError) as e:
+    #    print(e)
     finally:
         print()
 
