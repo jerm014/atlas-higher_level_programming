@@ -7,7 +7,7 @@ def safe_print_list_integers(a=[], b=0):
     printed = 0
     try:
         for i in range(0, b + 1):
-            print(a[i], end="")
+            print("{:d}".format(a[i]), end="")
             printed += 1
             if printed == b:
                 return printed
