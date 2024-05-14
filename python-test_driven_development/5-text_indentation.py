@@ -19,6 +19,6 @@ def text_indentation(text):
 
     for word in text:
         if word == "." or word == "?" or word == ":":
-            print(word + "\n\n", end="")
+            print(word.strip() + "\n\n", end="")
         else:
             print("{}".format(word), end="")
