@@ -24,5 +24,5 @@ def text_indentation(t):
         if l == "\n":
             t_array.append("\n")
         else:
-            t_array.append(l.strip())
+            t_array.append(l.lstrip())
     print("".join(t_array), end="")
