@@ -20,9 +20,9 @@ def text_indentation(t):
     t = t.replace(".", ".\n\n").replace(":", ":\n\n").replace("?", "?\n\n")
     p = t.splitlines(True)
     t_array = []
-    for l in p:
-        if l == "\n":
+    for line in p:
+        if line == "\n":
             t_array.append("\n")
         else:
-            t_array.append(l.lstrip())
+            t_array.append(line.lstrip())
     print("".join(t_array), end="")
