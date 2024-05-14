@@ -14,7 +14,7 @@ class Square:
 
         Args:
             size (int): size of the square
-            position (tuple): 2 positive integers for the position of the square
+            position (tuple): 2 positive integers, position of the square
 
         Raises:
             TypeError: if size is not an integer
