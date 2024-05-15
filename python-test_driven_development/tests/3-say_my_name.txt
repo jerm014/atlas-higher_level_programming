@@ -21,7 +21,7 @@ Usage
 ::
 
     >>> say_my_name("Jeremy")
-    My name is Jeremy
+    My name is Jeremy 
 
 Invalid Names
 =============
