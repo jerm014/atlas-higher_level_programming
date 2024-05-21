@@ -16,5 +16,5 @@ def load_from_json_file(filename):
         with open(filename, 'r') as file:
             return json.load(file)
     except json.JSONDecodeError as e:
-        print(f"Error decoding JSON: {e}")
+        print(f"[JSONDecodeError] {e}")
         return None
