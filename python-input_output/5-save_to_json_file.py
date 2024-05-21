@@ -17,8 +17,10 @@ def save_to_json_file(my_obj, filename):
         - Does not manage file permission exceptions.
     """
     try:
-        with open(filename, 'w') as file:
-            json.dump(my_obj, file)
+        json.dumps(my_obj)
     except TypeError as e:
         print("[TypeError]", e)
         return
+    try:
+        with open(filename, 'w') as file:
+            json.dump(my_obj, file)
