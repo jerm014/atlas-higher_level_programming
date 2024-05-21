@@ -17,6 +17,5 @@ def load_from_json_file(filename):
             return json.load(file)
     except json.JSONDecodeError as e:
         print(f"[JSONDecodeError] {e}")
-        return None
-    except Exception:
-        pass
+    except FileNotFoundError as e:
+        print(f"[FileNotFoundError] {e}")
