@@ -18,3 +18,5 @@ def load_from_json_file(filename):
     except json.JSONDecodeError as e:
         print(f"[JSONDecodeError] {e}")
         return None
+    except PermissionError:
+        pass
