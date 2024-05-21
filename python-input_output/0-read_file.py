@@ -10,6 +10,6 @@ def read_file(filename=""):
             for line in file:
                 print(line, end="")
     except FileNotFoundError:
-        print(ERR_NOFILE, "'", filename, "'")
+        print(ERR_NOFILE, "'", filename, "'", sep=None)
     except Exception as e:
         print(f"An error occurred: {e}")
