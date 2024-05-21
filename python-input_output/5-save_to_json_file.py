@@ -9,7 +9,7 @@ def save_to_json_file(my_obj, filename):
 
     Args:
         my_obj (object): The Python object to be serialized.
-        filename (str): The name of the file to write.
+        filename (str):  The name of the file to write.
 
     Notes:
         - Uses the 'with' statement for proper file handling.
