@@ -3,6 +3,7 @@
 
 
 def read_file(filename=""):
+    """documentation for the function!"""
     try:
         with open(filename, "r", encoding="utf-8") as file:
             for line in file:
