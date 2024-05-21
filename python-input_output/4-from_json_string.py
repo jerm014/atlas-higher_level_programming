@@ -18,4 +18,3 @@ def from_json_string(my_str):
         - Does not handle exceptions if the JSON string is invalid.
     """
     return json.loads(my_str)
-
