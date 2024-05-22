@@ -22,4 +22,4 @@ def save_to_json_file(my_obj, filename):
             f.write(json.dumps(my_obj))
     except Exception as e:
         print(f"[{type(e).__name__}] {e}")
-        sys.exit(1)
+        #sys.exit(1)
