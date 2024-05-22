@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """documentation is important!"""
 import json
+import sys
 
 
 def save_to_json_file(my_obj, filename):
@@ -21,4 +22,4 @@ def save_to_json_file(my_obj, filename):
             f.write(json.dumps(my_obj))
     except Exception as e:
         print(f"[{type(e).__name__}] {e}")
-        pass
+        sys.exit(1)
