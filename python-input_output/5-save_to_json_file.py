@@ -19,7 +19,14 @@ def save_to_json_file(my_obj, filename):
     """
     try:
         with open(filename, 'w') as f:
-            f.write(json.dumps(my_obj))
+            try:
+                x = json.dumps(my_obj)
+            except Exception as e:
+                print(f"[{type(e).__name__}] {e}")
+                sys.exit(1)
+
+            f.write(x)
+        
     except Exception as e:
         print(f"[{type(e).__name__}] {e}")
         #sys.exit(1)
