@@ -12,10 +12,5 @@ def load_from_json_file(filename):
     Returns:
         The Python object parsed from the JSON file.
     """
-    try:
-        with open(filename, 'r') as file:
-            return json.load(file)
-    except json.JSONDecodeError as e:
-        print(f"[JSONDecodeError] {e}")
-    except FileNotFoundError as e:
-        print(f"[FileNotFoundError] {e}")
+    with open(filename) as f:
+        return json.load(f)
