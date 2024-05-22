@@ -16,5 +16,9 @@ def save_to_json_file(my_obj, filename):
         - Does not handle exceptions if the object cannot be serialized.
         - Does not manage file permission exceptions.
     """
-    with open(filename, 'w') as f:
-        f.write(json.dumps(my_obj))
+    try:
+        with open(filename, 'w') as f:
+            f.write(json.dumps(my_obj))
+    except Exception as e:
+        print(e)
+        return
