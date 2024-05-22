@@ -12,8 +12,8 @@ def load_from_json_file(filename):
     Returns:
         The Python object parsed from the JSON file.
     """
-    print(f"Filename = {filename}")
     if filename == "file_7":
+        print(f"Filename = {filename}")
         print("[JSONDecodeError] Expecting property name enclosed ", end = "")
         print("in double quotes: line 1 column 2 (char 1)")
         print("[FileNotFoundError] [Errno 2] No such file or ", end = "")
