@@ -98,7 +98,7 @@ class Rectangle(Base):
         if type(self).__name__ == "Rectangle":
             s += str(self.__width) + "/" + str(self.__height)
         else:
-            s += str(self.__width) 
+            s += str(self.__width)
         return s
 
     def update(self, *args, **kwargs):
