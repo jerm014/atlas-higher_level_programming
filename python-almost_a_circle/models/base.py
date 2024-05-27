@@ -3,6 +3,7 @@
 import json
 import os
 
+
 class Base:
     """Base Class for Shapes"""
 
