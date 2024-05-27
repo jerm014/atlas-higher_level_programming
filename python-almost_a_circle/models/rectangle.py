@@ -134,6 +134,6 @@ class Rectangle(Base):
                     self.__x = value
                 elif key == "y":
                     self.__y = value
-                elif key = "size":
+                elif key == "size":
                     self.__width = value
                     self.__height = value
