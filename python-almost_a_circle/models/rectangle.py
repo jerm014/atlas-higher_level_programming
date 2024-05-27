@@ -95,7 +95,7 @@ class Rectangle(Base):
         """print out a rectangle (or a square)"""
         s = "[" + type(self).__name__ + "] (" + str(self.id) + ") "
         s += str(self.__x) + "/" + str(self.__y) + " - "
-        if type(self).__name__ = "Rectangle":
+        if type(self).__name__ == "Rectangle":
             s += str(self.__width) + "/" + str(self.__height)
         else:
             s += str(self.__width) 
