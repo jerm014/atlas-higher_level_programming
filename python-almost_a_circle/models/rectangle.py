@@ -92,10 +92,13 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        """print out a rectangle"""
+        """print out a rectangle (or a square)"""
         s = "[" + type(self).__name__ + "] (" + str(self.id) + ") "
         s += str(self.__x) + "/" + str(self.__y) + " - "
-        s += str(self.__width) + "/" + str(self.__height)
+        if type(self)..__name__ = "Rectangle":
+            s += str(self.__width) + "/" + str(self.__height)
+        else:
+            s += str(self.__width) 
         return s
 
     def update(self, *args, **kwargs):
