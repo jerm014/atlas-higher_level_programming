@@ -137,3 +137,12 @@ class Rectangle(Base):
                 elif key == "size":
                     self.__width = value
                     self.__height = value
+
+    def to_dictionary(self):
+        """return a dictionary describing the shape"""
+        d = {"id": self.id,
+             "width": self.width,
+             "height": self.height,
+             "x": self.x,
+             "y": self.y}
+        return d
