@@ -52,5 +52,5 @@ class Base:
         else:
             obj = cls(1)
 
-        obj.update(dictionary)
+        obj.update(**dictionary)
         return obj
