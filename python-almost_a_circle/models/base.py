@@ -33,5 +33,5 @@ class Base:
             if list_objs is None:
                 text_file.write("[]")
             else:
-                j = Base.to_json_string([i.to_dictionary() for i in list_objs])
+                j = self.to_json_string([i.to_dictionary() for i in list_objs])
                 text_file.write(j)
