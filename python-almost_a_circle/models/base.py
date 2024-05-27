@@ -35,3 +35,12 @@ class Base:
             else:
                 j = self.to_json_string([i.to_dictionary() for i in list_objs])
                 text_file.write(j)
+
+    @staticmethod
+    def from_json_string(json_string):
+        j = json.loads(json_string)
+        if json_string is None:
+            return []
+        else:
+            return j
+
