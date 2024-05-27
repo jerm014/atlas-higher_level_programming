@@ -20,3 +20,7 @@ class Square(Rectangle):
         """size setter"""
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """just call the rectangle update"""
+        super().update(args, kwargs)
