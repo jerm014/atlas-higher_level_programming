@@ -31,4 +31,7 @@ class Base:
         list_of_dictionaries = [i.to_dictionary() for i in list_objs]
         file_name = self.__name__ + ".json"
         with open(file_name, "w") as text_file:
-            text_file.write(Base.to_json_string(list_of_dictionaries))
+            if list_objs is None:
+                text_file.write("[]")
+            else:
+                text_file.write(Base.to_json_string(list_of_dictionaries))
