@@ -103,14 +103,24 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """"update the Rectangle"""
-        try:
-            self.id = args[0]
-            self.__width = args[1]
-            self.__height = args[2]
-            self.__x = args[3]
-            self.__y = args[4]
-        except IndexError:
-            pass
+        if type(self).__name__ == "Rectangle":
+            try:
+                self.id = args[0]
+                self.__width = args[1]
+                self.__height = args[2]
+                self.__x = args[3]
+                self.__y = args[4]
+            except IndexError:
+                pass
+        else:
+            try:
+                self.id = args[0]
+                self.__width = args[1]
+                self.__height = args[1]
+                self.__x = args[2]
+                self.__y = args[3]
+            except IndexError:
+                pass
 
         if kwargs is not None and args is not None:
             for key, value in kwargs.items():
@@ -124,3 +134,6 @@ class Rectangle(Base):
                     self.__x = value
                 elif key == "y":
                     self.__y = value
+                elif key = "size":
+                    self.__width = value
+                    self.__height = value
