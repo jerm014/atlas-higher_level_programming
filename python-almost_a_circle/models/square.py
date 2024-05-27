@@ -12,6 +12,6 @@ class Square(Rectangle):
     def __str__(self):
         """print out details of this square"""
         s = "[Square] (" + str(self.id) + ") "
-        s += str(self.__x) + " / " + str(self.__y) + " - "
-        s += str(self.__width)
+        s += str(self.x) + " / " + str(self.y) + " - "
+        s += str(self.width)
         return s
