@@ -34,16 +34,8 @@ class Square(Rectangle):
 
         if kwargs is not None and args is not None:
             for key, value in kwargs.items():
-                if key == "id":
-                    self.id = value
-                elif key == "width":
-                    self.width = value
-                elif key == "height":
-                    self.height = value
-                elif key == "x":
-                    self.x = value
-                elif key == "y":
-                    self.y = value
-                elif key == "size":
+                if key == "size":
                     self.width = value
                     self.height = value
+                else:
+                    setattr(self, key, value)
