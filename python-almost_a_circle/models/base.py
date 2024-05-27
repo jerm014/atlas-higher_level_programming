@@ -43,3 +43,9 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        obj = cls(1, 1)
+        obj.update(dictionary)
+        return obj
