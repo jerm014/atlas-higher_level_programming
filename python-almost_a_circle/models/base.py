@@ -28,6 +28,6 @@ class Base:
     def save_to_file(cls, list_objs=None):
         """writes the JSON string representation of list_objs to a file"""
         json_string = Base.to_json_string(list_objs)
-        file_name = "Rectangle.json"
+        file_name = type(list_objs[0]).json"
         with open(file_name, "w+") as text_file:
             text_file.write(json_string)
