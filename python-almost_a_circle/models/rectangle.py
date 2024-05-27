@@ -93,7 +93,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """print out a rectangle"""
-        s = "[Rectangle] (" + str(self.id) + ") "
+        s = "[" + type(self).__name__ + "] (" + str(self.id) + ") "
         s += str(self.__x) + "/" + str(self.__y) + " - "
         s += str(self.__width) + "/" + str(self.__height)
         return s
