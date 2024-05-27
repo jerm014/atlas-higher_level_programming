@@ -27,7 +27,7 @@ class Base:
 
     def save_to_file(self, list_objs):
         """writes the JSON string representation of list_objs to a file"""
-        s = Base.to_json_string(list_objs)
+        s = Base.to_json_string(self, list_objs)
         n = type(self).__name__ + ".json"
         with open(n, "w") as text_file:
             text_file.write(s)
