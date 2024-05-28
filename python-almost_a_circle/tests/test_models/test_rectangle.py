@@ -35,3 +35,8 @@ class Test_Rectangle(unittest.TestCase):
         """can't assign a string to the width!"""
         with self.assertRaises(TypeError):
             new = Rectangle("2", 1)
+
+    def test_width_not_a_string2(self):
+        """can't assign a string to the height!"""
+        with self.assertRaises(TypeError):
+            new = Rectangle(1, "2")
