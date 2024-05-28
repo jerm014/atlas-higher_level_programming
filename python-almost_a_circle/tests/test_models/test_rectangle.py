@@ -88,3 +88,11 @@ class Test_Rectangle(unittest.TestCase):
         """can't assign a zero to the height!"""
         with self.assertRaises(ValueError):
             new = Rectangle(1, 0)
+
+    def test_area(self):
+        r = Rectangle(10, 10)
+        self.assertEqual(r.area(), 100)
+
+    def test_str(self):
+        r = Rectangle(10, 10)
+        self.assertEqual(r.__str__(),"[Rectangle] (2) 0/0 - 10/10")
