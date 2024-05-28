@@ -21,3 +21,6 @@ class TestBase_instantiation(unittest.TestCase):
     def test_assign_id(self):
         self.assertEqual(98, Base(98).id)
 
+    def test_makes_a_base(self):
+        self.assertIsNotNone(Base())
+
