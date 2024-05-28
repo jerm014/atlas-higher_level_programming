@@ -18,3 +18,6 @@ class TestBase_instantiation(unittest.TestCase):
         baseB = Base()
         self.assertEquals(baseA.id, baseB.id - 1)
 
+    def test_assign_id(self):
+        self.assertEqual(98, Base(98).id)
+
