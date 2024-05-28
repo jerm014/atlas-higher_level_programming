@@ -3,6 +3,8 @@
 
 import os
 import unittest
+from unittest.mock import patch
+from io import StringIO
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -96,3 +98,26 @@ class Test_Rectangle(unittest.TestCase):
     def test_str(self):
         r = Rectangle(10, 10)
         self.assertEqual(r.__str__(),"[Rectangle] (2) 0/0 - 10/10")
+
+    def test_display_no_x_no_y(self):
+        r = Rectangle(10, 2)
+        out = "##########\n##########\n"
+        with patch('sys.stdout', new=StringIO()) as stdout:
+            r.display()
+            self.assertEqual(stdout.getvalue(), out)
+
+    def test_display_no_x(self):
+        r = Rectangle(10, 2)
+        r.y = 2
+        out = "\n\n##########\n##########\n"
+        with patch('sys.stdout', new=StringIO()) as stdout:
+            r.display()
+            self.assertEqual(stdout.getvalue(), out)
+
+    def test_display_no_y(self):
+        r = Rectangle(10, 2)
+        r.x = 2
+        out = "  ##########\n  ##########\n"
+        with patch('sys.stdout', new=StringIO()) as stdout:
+            r.display()
+            self.assertEqual(stdout.getvalue(), out)
