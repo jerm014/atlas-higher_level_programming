@@ -121,3 +121,12 @@ class Test_Rectangle(unittest.TestCase):
         with patch('sys.stdout', new=StringIO()) as stdout:
             r.display()
             self.assertEqual(stdout.getvalue(), out)
+
+    def test_to_dictionary(self):
+        r = Rectangle(10, 2)
+        d = {'id': 3, 'width': 10, 'height': 2, 'x': 0, 'y': 0} 
+        self.assertEqual(r.to_dictionary(), d)
+
+    def test_update(self):
+         r = Rectangle(10, 2)
+         self.assertEqual(r.update(), None)
