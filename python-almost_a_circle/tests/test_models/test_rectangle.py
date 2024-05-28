@@ -156,3 +156,45 @@ class Test_Rectangle(unittest.TestCase):
         r = Rectangle(10, 100, 1000, 10000, 1)
         r.update(2, 20, 200, 2000, 20000)
         self.assertEqual("[Rectangle] (2) 2000/20000 - 20/200", str(r))
+
+    def test_create_1(self):
+        r = Rectangle.create(**{ 'id': 89 })
+        self.assertEqual(str(r), "[Rectangle] (89) 0/0 - 1/1")
+
+    def test_create_2(self):
+        r = Rectangle.create(**{ 'id': 89,
+                                 'width': 2 })
+        self.assertEqual(str(r), "[Rectangle] (89) 0/0 - 2/1")
+
+    def test_create_3(self):
+        r = Rectangle.create(**{ 'id': 89,
+                                 'width': 2,
+                                 'height': 2 })
+        self.assertEqual(str(r), "[Rectangle] (89) 0/0 - 2/2")
+
+    def test_create_4(self):
+        r = Rectangle.create(**{ 'id': 89,
+                                 'width': 2,
+                                 'height': 2,
+                                 'x': 2 })
+        self.assertEqual(str(r), "[Rectangle] (89) 2/0 - 2/2")
+
+    def test_create_5(self):
+        r = Rectangle.create(**{ 'id': 89,
+                                 'width': 2,
+                                 'height': 2,
+                                 'x': 2,
+                                 'y': 2 })
+        self.assertEqual(str(r), "[Rectangle] (89) 2/2 - 2/2")
+
+#Rectangle.create(**{ 'id': 89, 'width': 1 })
+#Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2 })
+#Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 })
+#Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 })
+#Rectangle.save_to_file(None)
+#Rectangle.save_to_file([])
+#Rectangle.save_to_file([Rectangle(1, 2)])
+#Rectangle.load_from_file() # file doesn't exist
+#Rectangle.load_from_file() # file does exist
+
+
