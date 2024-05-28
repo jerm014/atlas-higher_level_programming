@@ -12,7 +12,7 @@ from models.square import Square
 
 
 class Test_Base(unittest.TestCase):
-    """test instantiation of the class Base"""
+    """test the class Base"""
 
     def test_id(self):
         """can we make a new Base"""
