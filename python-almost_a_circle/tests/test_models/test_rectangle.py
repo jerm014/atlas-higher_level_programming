@@ -97,7 +97,7 @@ class Test_Rectangle(unittest.TestCase):
 
     def test_str(self):
         r = Rectangle(10, 10)
-        self.assertEqual(r.__str__(),"[Rectangle] (2) 0/0 - 10/10")
+        self.assertEqual(str(r),"[Rectangle] (2) 0/0 - 10/10")
 
     def test_display_no_x_no_y(self):
         r = Rectangle(10, 2)
@@ -127,6 +127,32 @@ class Test_Rectangle(unittest.TestCase):
         d = {'id': 3, 'width': 10, 'height': 2, 'x': 0, 'y': 0} 
         self.assertEqual(r.to_dictionary(), d)
 
-    def test_update(self):
-         x = ["update" in dir(Rectangle)]
-         self.assertEqual(x, [True])
+    def test_update_1(self):
+        r = Rectangle(10, 100, 1000, 10000, 1)
+        r.update()
+        self.assertEqual("[Rectangle] (1) 1000/10000 - 10/100", str(r))
+
+    def test_update_2(self):
+        r = Rectangle(10, 100, 1000, 10000, 1)
+        r.update(2)
+        self.assertEqual("[Rectangle] (2) 1000/10000 - 10/100", str(r))
+
+    def test_update_3(self):
+        r = Rectangle(10, 100, 1000, 10000, 1)
+        r.update(2, 20)
+        self.assertEqual("[Rectangle] (2) 1000/10000 - 20/100", str(r))
+
+    def test_update_4(self):
+        r = Rectangle(10, 100, 1000, 10000, 1)
+        r.update(2, 20, 200)
+        self.assertEqual("[Rectangle] (2) 1000/10000 - 20/200", str(r))
+
+    def test_update_5(self):
+        r = Rectangle(10, 100, 1000, 10000, 1)
+        r.update(2, 20, 200, 2000)
+        self.assertEqual("[Rectangle] (2) 2000/10000 - 20/200", str(r))
+
+    def test_update_6(self):
+        r = Rectangle(10, 100, 1000, 10000, 1)
+        r.update(2, 20, 200, 2000, 20000)
+        self.assertEqual("[Rectangle] (2) 2000/20000 - 20/200", str(r))
