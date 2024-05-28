@@ -31,12 +31,22 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(new.y, 0)
         self.assertEqual(new.id, 1)
 
-    def test_width_not_a_string(self):
+    def test_width_not_a_string1(self):
         """can't assign a string to the width!"""
         with self.assertRaises(TypeError):
-            new = Rectangle("2", 1)
+            new = Rectangle("1", 1)
 
-    def test_width_not_a_string2(self):
+    def test_height_not_a_string2(self):
         """can't assign a string to the height!"""
         with self.assertRaises(TypeError):
-            new = Rectangle(1, "2")
+            new = Rectangle(1, "1")
+
+    def test_x_not_a_string3(self):
+        """can't assign a string to the x!"""
+        with self.assertRaises(TypeError):
+            new = Rectangle(1, 1, "1")
+
+    def test_y_not_a_string4(self):
+        """can't assign a string to the y!"""
+        with self.assertRaises(TypeError):
+            new = Rectangle(1, 1, 1, "1")
