@@ -78,3 +78,13 @@ class Test_Rectangle(unittest.TestCase):
         """can't assign a negative to the y!"""
         with self.assertRaises(ValueError):
             new = Rectangle(1, 1, 1, -1)
+
+    def test_width_not_0(self):
+        """can't assign a zero to the width!"""
+        with self.assertRaises(ValueError):
+            new = Rectangle(0, 1)
+
+    def test_height_not_0(self):
+        """can't assign a zero to the height!"""
+        with self.assertRaises(ValueError):
+            new = Rectangle(1, 0)
