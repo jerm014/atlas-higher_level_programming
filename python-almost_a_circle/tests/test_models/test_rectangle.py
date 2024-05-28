@@ -30,3 +30,8 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(new.x, 0)
         self.assertEqual(new.y, 0)
         self.assertEqual(new.id, 1)
+
+    def test_width_not_a_string(self):
+        """can't assign a string to the width!"""
+        with self.assertRaises(TypeError):
+            new = Rectangle("2", 1)
