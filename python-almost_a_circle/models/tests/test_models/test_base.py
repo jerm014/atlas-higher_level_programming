@@ -13,6 +13,10 @@ from models.square import Square
 
 class TestBase_instantiation(unittest.TestCase):
     """test instantiation of the class Base"""
+    def test_new_base(self):
+        base = Base()
+        self.assertEqual(base.id, 1)
+
     def test_make_a_base(self):
         baseA = Base()
         baseB = Base()
