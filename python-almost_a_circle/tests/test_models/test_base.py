@@ -14,7 +14,7 @@ from models.square import Square
 class TestBase_instantiation(unittest.TestCase):
     """test instantiation of the class Base"""
 
-    def test_new_base(self):
+    def test_id(self):
         """can we make a new Base"""
         Base._Base__nb_objects = 0
         base = Base()
