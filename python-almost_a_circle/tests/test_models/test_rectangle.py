@@ -58,3 +58,23 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(new.x, 100)
         self.assertEqual(new.y, 1000)
         self.assertEqual(new.id, 10000)
+
+    def test_width_not_below_0(self):
+        """can't assign a negative to the width!"""
+        with self.assertRaises(ValueError):
+            new = Rectangle(-1, 1)
+
+    def test_height_not_below_0(self):
+        """can't assign a negative to the height!"""
+        with self.assertRaises(ValueError):
+            new = Rectangle(1, -1)
+
+    def test_x_not_below_0(self):
+        """can't assign a negative to the x!"""
+        with self.assertRaises(ValueError):
+            new = Rectangle(1, 1, -1)
+
+    def test_y_not_below_0(self):
+        """can't assign a negative to the y!"""
+        with self.assertRaises(ValueError):
+            new = Rectangle(1, 1, 1, -1)
