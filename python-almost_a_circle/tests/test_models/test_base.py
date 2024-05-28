@@ -36,3 +36,6 @@ class TestBase_instantiation(unittest.TestCase):
 
     def test_to_json_string(self):
         self.assertEquals(Base.to_json_string(None),"[]")
+
+    def test_from_json_string(self):
+        self.assertEquals(Base.from_json_string(None), [])
