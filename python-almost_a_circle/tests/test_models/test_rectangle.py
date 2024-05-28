@@ -50,3 +50,11 @@ class Test_Rectangle(unittest.TestCase):
         """can't assign a string to the y!"""
         with self.assertRaises(TypeError):
             new = Rectangle(1, 1, 1, "1")
+
+    def test_make_rectangle_with_all_5(self):
+        new = Rectangle(1, 10, 100, 1000, 10000)
+        self.assertEqual(new.width, 1)
+        self.assertEqual(new.height, 10)
+        self.assertEqual(new.x, 100)
+        self.assertEqual(new.y, 1000)
+        self.assertEqual(new.id, 10000)
