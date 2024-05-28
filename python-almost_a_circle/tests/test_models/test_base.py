@@ -34,3 +34,5 @@ class TestBase_instantiation(unittest.TestCase):
         """another test of making a new Base with default id"""
         self.assertIsNotNone(Base())
 
+    def test_to_json_string(self):
+        self.assertEquals(Base.to_json_string(None),"[]")
