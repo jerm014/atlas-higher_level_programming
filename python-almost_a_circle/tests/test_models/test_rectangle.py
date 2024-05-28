@@ -18,4 +18,15 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(r1.id, r2.id - 1)
 
     def test_new_rectangle2(self):
+        """test it another way"""
         self.assertIsNotNone(Rectangle(1, 2))
+
+    def test_new_rectangle3(self):
+        """make a new rectangle and give it attributes"""
+        Base._Base__nb_objects = 0  # reset the count
+        new = Rectangle(1, 2)
+        self.assertEqual(new.width, 1)
+        self.assertEqual(new.height, 2)
+        self.assertEqual(new.x, 0)
+        self.assertEqual(new.y, 0)
+        self.assertEqual(new.id, 1)
