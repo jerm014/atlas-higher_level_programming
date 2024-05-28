@@ -96,8 +96,9 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(r.area(), 100)
 
     def test_str(self):
+        Base._Base__nb_objects = 0
         r = Rectangle(10, 10)
-        self.assertEqual(str(r),"[Rectangle] (2) 0/0 - 10/10")
+        self.assertEqual(str(r),"[Rectangle] (1) 0/0 - 10/10")
 
     def test_display_no_x_no_y(self):
         r = Rectangle(10, 2)
@@ -123,8 +124,9 @@ class Test_Rectangle(unittest.TestCase):
             self.assertEqual(stdout.getvalue(), out)
 
     def test_to_dictionary(self):
+        Base._Base__nb_objects = 0
         r = Rectangle(10, 2)
-        d = {'id': 3, 'width': 10, 'height': 2, 'x': 0, 'y': 0} 
+        d = {'id': 1, 'width': 10, 'height': 2, 'x': 0, 'y': 0} 
         self.assertEqual(r.to_dictionary(), d)
 
     def test_update_1(self):
@@ -186,6 +188,15 @@ class Test_Rectangle(unittest.TestCase):
                                  'x': 2,
                                  'y': 2 })
         self.assertEqual(str(r), "[Rectangle] (89) 2/2 - 2/2")
+
+    def test_save_to_file_none(self):
+        r = Rectangle(1,1)
+        self.assertEqual(r.save_to_file(None), None)
+
+    def test_save_to_file_emptylist(self):
+        r = Rectangle(1,1)
+        self.assertEqual(r.save_to_file([]), None)
+
 
 #Rectangle.create(**{ 'id': 89, 'width': 1 })
 #Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2 })
