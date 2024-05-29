@@ -113,3 +113,71 @@ class Test_Base__save_to_file(unittest.TestCase):
     def test_save_to_file_10(self):
         with self.assertRaises(TypeError):
             Square.save_to_file([], 1)
+
+
+
+class Test_Base__load_from_file(unittest.TestCase):
+    """test the base class load_from_file method"""
+
+    @classmethod
+    def tearDown(self):
+        """delete files"""
+        try:
+            os.remove("Rectangle.json")
+        except IOError:
+            pass
+        try:
+            os.remove("Square.json")
+        except IOError:
+            pass
+
+    def test_load_from_file_1(self):
+        r1 = Rectangle(10, 1, 1, 1, 1)
+        r2 = Rectangle(1, 1, 1, 1, 1)
+        Rectangle.save_to_file([r1, r2])
+        out = Rectangle.load_from_file()
+        self.assertEqual(str(r1), str(out[0]))
+
+    def test_load_from_file_2(self):
+        r1 = Rectangle(10, 1, 1, 1, 1)
+        r2 = Rectangle(1, 1, 1, 1, 1)
+        Rectangle.save_to_file([r1, r2])
+        out = Rectangle.load_from_file()
+        self.assertEqual(str(r2), str(out[1]))
+
+    def test_load_from_file_3(self):
+        r1 = Rectangle(10, 1, 1, 1, 1)
+        r2 = Rectangle(1, 1, 1, 1, 1)
+        Rectangle.save_to_file([r1, r2])
+        out = Rectangle.load_from_file()
+        self.assertTrue(all(type(o) == Rectangle for o in out))
+
+    def test_load_from_file_4(self):
+        s1 = Square(1, 1, 1, 1)
+        s2 = Square(1, 1, 1, 1)
+        Square.save_to_file([s1, s2])
+        list_squares_output = Square.load_from_file()
+        self.assertEqual(str(s1), str(list_squares_output[0]))
+
+    def test_load_from_file_5(self):
+        s1 = Square(1, 1, 1, 1)
+        s2 = Square(1, 1, 1, 1)
+        Square.save_to_file([s1, s2])
+        list_squares_out = Square.load_from_file()
+        self.assertEqual(str(s2), str(list_squares_out[1]))
+
+    def test_load_from_file_6(self):
+        s1 = Square(5, 1, 3, 3)
+        s2 = Square(9, 5, 2, 3)
+        Square.save_to_file([s1, s2])
+        out = Square.load_from_file()
+        self.assertTrue(all(type(o) == Square for o in out))
+
+    def test_load_from_file_7(self):
+        output = Square.load_from_file()
+        self.assertEqual([], output)
+
+    def test_load_from_file_8(self):
+        with self.assertRaises(TypeError):
+            Base.load_from_file([], 1)
+
