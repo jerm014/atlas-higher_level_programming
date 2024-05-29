@@ -36,3 +36,80 @@ class Test_Base(unittest.TestCase):
 
     def test_from_json_string(self):
         self.assertEquals(Base.from_json_string(None), [])
+
+class Test_Base__save_to_file(unittest.TestCase):
+    """test the base class save_to_file method"""
+
+    @classmethod
+    def tearDown(self):
+        """delete files"""
+        try:
+            os.remove("Rectangle.json")
+        except IOError:
+            pass
+        try:
+            os.remove("Square.json")
+        except IOError:
+            pass
+        try:
+            os.remove("Base.json")
+        except IOError:
+            pass
+
+    def test_save_to_file_1(self):
+        r = Rectangle(11, 8, 1, 9, 3)
+        Rectangle.save_to_file([r])
+        with open("Rectangle.json", "r") as f:
+            self.assertTrue(len(f.read()) == 53)
+
+    def test_save_to_file_2(self):
+        r1 = Rectangle(11, 9, 1, 1, 1)
+        r2 = Rectangle(1, 1, 1, 1, 1)
+        Rectangle.save_to_file([r1, r2])
+        with open("Rectangle.json", "r") as f:
+            self.assertTrue(len(f.read()) == 105)
+
+    def test_save_to_file_3(self):
+        s = Square(10, 1, 1, 1)
+        Square.save_to_file([s])
+        with open("Square.json", "r") as f:
+            self.assertTrue(len(f.read()) == 39)
+
+    def test_save_to_file_4(self):
+        s1 = Square(10, 1, 1, 1)
+        s2 = Square(2, 1, 1, 1)
+        Square.save_to_file([s1, s2])
+        with open("Square.json", "r") as f:
+            self.assertTrue(len(f.read()) == 77)
+
+    def test_save_to_file_5(self):
+        s = Square(10, 1, 1, 1)
+        Base.save_to_file([s])
+        with open("Base.json", "r") as f:
+            self.assertTrue(len(f.read()) == 39)
+
+    def test_save_to_file_6(self):
+        s = Square(3, 1, 10, 1)
+        Square.save_to_file([s])
+        s = Square(10, 1, 1, 1)
+        Square.save_to_file([s])
+        with open("Square.json", "r") as f:
+            self.assertTrue(len(f.read()) == 39)
+
+    def test_save_to_file_7(self):
+        Square.save_to_file(None)
+        with open("Square.json", "r") as f:
+            self.assertEqual("[]", f.read())
+
+    def test_save_to_file_8(self):
+        Square.save_to_file([])
+        with open("Square.json", "r") as f:
+            self.assertEqual("[]", f.read())
+
+    def test_save_to_file_9(self):
+        with self.assertRaises(TypeError):
+            Rectangle.save_to_file()
+
+    def test_save_to_file_10(self):
+        with self.assertRaises(TypeError):
+            Square.save_to_file([], 1)
