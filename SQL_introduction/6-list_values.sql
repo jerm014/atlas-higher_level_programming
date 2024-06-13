@@ -3,5 +3,4 @@
 --
 -- Make sure you put in a comment so everyone knows that this simple command
 -- select everything from a table in a database specified on the command line
-USE ?;
 SELECT * FROM first_table;

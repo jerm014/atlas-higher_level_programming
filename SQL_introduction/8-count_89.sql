@@ -3,5 +3,4 @@
 --
 -- Make sure you put in a comment so everyone knows that this simple command
 -- shows the count of records in a table in a database specified on the command line
-USE ?;
 SELECT COUNT(*) FROM first_tbale WHERE id=89;
