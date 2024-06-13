@@ -2,6 +2,6 @@
 -- ourself in code." --Robert C. Martin (Author of Clean Code)
 --
 -- Make sure you put in a comment so everyone knows that this simple command
--- inserts data into a table in a database specified on the command line
+-- shows the count of records in a table in a database specified on the command line
 USE ?;
-INSERT INTO first_table (id, name) VALUES (89, 'Best School');
+SELECT COUNT(*) FROM first_tbale WHERE id=89
