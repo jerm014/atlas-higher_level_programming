@@ -3,4 +3,4 @@
 --
 -- Make sure you put in a comment so everyone knows that this simple command
 -- computes the score average of all records in the table
-SELECT AVG(score) AS average from second_table;
+SELECT AVG(score) AS average FROM second_table;

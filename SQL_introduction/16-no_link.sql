@@ -5,4 +5,4 @@
 -- show some records but not if the name is null (the name and id column should
 -- have been NOT NULL and the id column should have been set as a primary key.
 -- but I didn't write this project. It would have been a lot more fun if I had.)
-SELECT score, name from second_table WHERE name IS NOT NULL ORDER BY score DESC;
+SELECT score, name FROM second_table WHERE name IS NOT NULL ORDER BY score DESC;
