@@ -5,5 +5,5 @@
 -- computes the score average of all records in the table
 SELECT score, COUNT(score) AS number
 FROM second_table
-GROUP BY number, score
+GROUP BY score
 ORDER BY number DESC;
