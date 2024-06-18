@@ -13,7 +13,9 @@ if __name__ == "__main__":
     password = sys.argv[2]
     db_name = sys.argv[3]
     search = sys.argv[4]
-    sql = ("SELECT * FROM `states` WHERE `name` = '{}' ORDER BY `id`").format(search)
+    sql = "SELECT * FROM `states` "
+    sql += "WHERE `name` = '{}' "
+    sql += "ORDER BY `id`"
 
     # Connect to MySQL server
     db = MySQLdb.connect(host="localhost",
@@ -26,7 +28,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute the query
-    cursor.execute(sql)
+    cursor.execute(sql.format(search))
 
     # Fetch all results
     results = cursor.fetchall()
