@@ -26,7 +26,7 @@ if __name__ == "__main__":
 
     search = sys.argv[4]
     sql = "SELECT * FROM `states` "
-    sql += "WHERE `name` = '{}' "
+    sql += "WHERE BINARY `name` = '{}' "
     sql += "ORDER BY `id`"
 
     # Connect to MySQL
