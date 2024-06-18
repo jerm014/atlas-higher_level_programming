@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-SQLAlchemy (task 6)
-"""
+""" states class """
 
 
 from sqlalchemy import Column, Integer, String
@@ -11,10 +9,12 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
 class State(Base):
-    """
-    State class
-    """
-    __tablename__ = 'states'  # Link to the MySQL table 'states'
+    """ State class for states table """
+    __tablename__ = 'states'
 
-    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
-    name = Column(String(128), nullable=False)
+    id   = Column(Integer,
+                  primary_key=True,
+                  autoincrement=True,
+                  nullable=False)
+    name = Column(String(128),
+                  nullable=False)
