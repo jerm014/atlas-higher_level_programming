@@ -19,7 +19,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute the query
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    cursor.execute("SELECT * FROM `states` ORDER BY `id`")
 
     # Fetch all results
     results = cursor.fetchall()

@@ -13,11 +13,12 @@ if __name__ == "__main__":
     password = sys.argv[2]
     db_name = sys.argv[3]
     search = sys.argv[4]
-    sql = "SELECT cities.name "
-    sql += "FROM states "
-    sql += "INNER JOIN cities ON cities.state_id = states.id "
-    sql += "WHERE states.name = %s "
-    sql += "ORDER BY cities.id;"
+    sql = "SELECT `cities`.`name` "
+    sql += "FROM `states` "
+    sql += "INNER JOIN `cities` "
+    sql += "ON `cities`.`state_id` = `states`.`id` "
+    sql += "WHERE `states`.`name` = %s "
+    sql += "ORDER BY `cities`.`id`;"
     #sql += "ORDER BY cities.id;"
 
     # Connect to MySQL server

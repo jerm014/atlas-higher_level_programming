@@ -13,7 +13,7 @@ if __name__ == "__main__":
     password = sys.argv[2]
     db_name = sys.argv[3]
     search = sys.argv[4]
-    sql = "SELECT * FROM states where name = %s ORDER BY id ASC"
+    sql = "SELECT * FROM `states` WHERE `name` = %s ORDER BY `id`"
 
     # Connect to MySQL server
     db = MySQLdb.connect(host="localhost",

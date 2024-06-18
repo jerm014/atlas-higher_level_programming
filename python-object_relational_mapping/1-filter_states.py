@@ -10,7 +10,7 @@ import MySQLdb
 if __name__ == "__main__":
     # Get command-line arguments
     username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
-
+    sql = "SELECT * FROM `states` WHERE `name` LIKE 'N%' ORDER BY `id`"
     # Connect to MySQL server
     db = MySQLdb.connect(host="localhost", port=3306,
                          user=username, passwd=password, db=db_name)
@@ -19,7 +19,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute the query
-    cursor.execute("SELECT * FROM states WHERE name like 'N%' ORDER BY id ASC")
+    cursor.execute(sql)
 
     # Fetch all results
     results = cursor.fetchall()
