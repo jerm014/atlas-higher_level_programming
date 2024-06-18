@@ -41,7 +41,8 @@ from model_state import Base, State
 
 def list_states(username, password, db_name, search):
     # Create a database connection
-    engine = create_engine(f"mysql://{username}:{password}@localhost:3306/{db_name}")
+    connection = "mysql://{}:{}@localhost:3306/{}"
+    engine = create_engine(conection.format(username, password, db_name))
     Base.metadata.create_all(engine)
 
     # Create a session
@@ -58,7 +59,5 @@ def list_states(username, password, db_name, search):
     session.close()
 
 if __name__ == "__main__":
-    username = sys.argv[1]
-    password = sys.argv[2]
-    db_name = sys.argv[3]
+    username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
     list_states(username, password, db_name, search)

@@ -45,7 +45,5 @@ def list_states(username, password, db_name):
     session.close()
 
 if __name__ == "__main__":
-    username = sys.argv[1]
-    password = sys.argv[2]
-    db_name = sys.argv[3]
+    username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
     list_states(username, password, db_name)

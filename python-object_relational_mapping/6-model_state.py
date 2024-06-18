@@ -24,9 +24,9 @@ from sqlalchemy import (create_engine)
 
 if __name__ == "__main__":
     # Get command-line arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    db_name = sys.argv[3]
+    username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
+
+    # Connect to MySQL
     connection = 'mysql+mysqldb://{}:{}@localhost/{}'
     engine = create_engine(connection.format(username, password, db_name),
                            pool_pre_ping=True)
