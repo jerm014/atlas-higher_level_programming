@@ -12,7 +12,7 @@ hbtn_0e_6_usa
    from model_state import Base, State
  * Your script should connect to a MySQL server running on localhost at
    port 3306
- * hange the name of the State where id = 2 to New Mexico
+ * Change the name of the State where id = 2 to New Mexico
  * Your code should not be executed when imported
 """
 

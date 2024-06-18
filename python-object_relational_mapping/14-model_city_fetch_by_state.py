@@ -49,14 +49,10 @@ def list_states(username, password, db_name, search):
     session = Session()
 
     # Query the State with id = 2
-    state_to_update = session.query(State).filter_by(id=2).first()
+    results = session.query(City, State).filter(City.state_id == State.id).all()
 
-    if state_to_update:
-        # Change the name to "New Mexico"
-        state_to_update.name = "New Mexico"
-        session.commit()
-    else:
-        print("State with ID 2 not found.")
+    for city, state in results:
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
 
     # Close the session
     session.close()

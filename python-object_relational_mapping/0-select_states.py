@@ -22,7 +22,9 @@ if __name__ == "__main__":
     # Get command-line arguments
     username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
 
-    # Connect to MySQL server
+    sql = "SELECT * FROM `states` ORDER BY `id`"
+
+    # Connect to MySQL
     db = MySQLdb.connect(host="localhost", port=3306,
                          user=username, passwd=password, db=db_name)
 
@@ -30,7 +32,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute the query
-    cursor.execute("SELECT * FROM `states` ORDER BY `id`")
+    cursor.execute(sql)
 
     # Fetch all results
     results = cursor.fetchall()

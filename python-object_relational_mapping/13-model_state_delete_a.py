@@ -31,15 +31,12 @@ def list_states(username, password, db_name, search):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Query the State with id = 2
-    state_to_update = session.query(State).filter_by(id=2).first()
+    # Query the State with name like a
+    states = session.query(State).filter(State.name.like('%a%')).all()
 
-    if state_to_update:
-        # Change the name to "New Mexico"
-        state_to_update.name = "New Mexico"
-        session.commit()
-    else:
-        print("State with ID 2 not found.")
+    # Delete the states with name like a
+    for state in states:
+        session.delete(state)
 
     # Close the session
     session.close()

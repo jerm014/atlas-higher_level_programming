@@ -36,13 +36,12 @@ import MySQLdb
 
 if __name__ == "__main__":
     # Get command-line arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    db_name = sys.argv[3]
+    username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
+
     search = sys.argv[4]
     sql = "SELECT * FROM `states` WHERE `name` = %s ORDER BY `id`"
 
-    # Connect to MySQL server
+    # Connect to MySQL
     db = MySQLdb.connect(host="localhost",
                          port=3306,
                          user=username,

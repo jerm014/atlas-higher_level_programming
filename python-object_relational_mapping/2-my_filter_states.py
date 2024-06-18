@@ -8,7 +8,8 @@ table of hbtn_0e_0_usa where name matches the argument.
  * Your script should take 4 arguments: mysql username, mysql password,
    database name and state name searched (no argument validation needed)
  * You must use the module MySQLdb (import MySQLdb)
- * Your script should connect to a MySQL server running on localhost at port 3306
+ * Your script should connect to a MySQL server running on localhost at
+   port 3306
  * You must use format to create the SQL query with the user input
  * Results must be sorted in ascending order by states.id
  * Results must be displayed as they are in the example below
@@ -21,15 +22,14 @@ import MySQLdb
 
 if __name__ == "__main__":
     # Get command-line arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    db_name = sys.argv[3]
+    username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
+
     search = sys.argv[4]
     sql = "SELECT * FROM `states` "
     sql += "WHERE `name` = '{}' "
     sql += "ORDER BY `id`"
 
-    # Connect to MySQL server
+    # Connect to MySQL
     db = MySQLdb.connect(host="localhost",
                          port=3306,
                          user=username,

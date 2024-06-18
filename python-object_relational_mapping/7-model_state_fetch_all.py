@@ -25,7 +25,8 @@ from model_state import Base, State
 
 def list_states(username, password, db_name):
     # Create a database connection
-    engine = create_engine(f"mysql://{username}:{password}@localhost:3306/{db_name}")
+    connection = f"mysql://{username}:{password}@localhost:3306/{db_name}"
+    engine = create_engine(connection)
     Base.metadata.create_all(engine)
 
     # Create a session
