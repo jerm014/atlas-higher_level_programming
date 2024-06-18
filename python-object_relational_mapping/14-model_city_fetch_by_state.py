@@ -50,13 +50,15 @@ def list_states(username, password, db_name, search):
     session = Session()
 
     # Query the State with id = 2
-    results = session.query(City, State).filter(City.state_id == State.id).all()
+    results = session.query(City, State).\
+        filter(City.state_id == State.id).all()
 
     for city, state in results:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
 
     # Close the session
     session.close()
+
 
 if __name__ == "__main__":
     username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
