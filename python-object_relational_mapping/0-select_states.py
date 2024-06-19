@@ -25,8 +25,11 @@ if __name__ == "__main__":
     sql = "SELECT * FROM `states` ORDER BY `id`"
 
     # Connect to MySQL
-    db = MySQLdb.connect(host="localhost", port=3306,
-                         user=username, passwd=password, db=db_name)
+    db = MySQLdb.connect(host="localhost",
+                         port=3306,
+                         user=username,
+                         passwd=password,
+                         db=db_name)
 
     # Create a cursor object
     cursor = db.cursor()

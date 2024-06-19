@@ -27,7 +27,7 @@ from model_state import Base, State
 def list_states(username, password, db_name):
     # Create a database connection
     connection = "mysql://{}:{}@localhost:3306/{}"
-    engine = create_engine(conection.format(username, password, db_name))
+    engine = create_engine(connection.format(username, password, db_name))
     Base.metadata.create_all(engine)
 
     # Create a session
@@ -36,7 +36,7 @@ def list_states(username, password, db_name):
 
     # Query all State objects and sort by id
     states = session.query(State).order_by(State.id).\
-        filter(State.name.like('%a%')).all()
+        filter(State.name.like(func.binary('%a%'))).all()
 
     # Print the results
     for state in states:

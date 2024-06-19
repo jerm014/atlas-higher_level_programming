@@ -29,5 +29,5 @@ if __name__ == "__main__":
 
     # Connect to MySQL
     connection = "mysql://{}:{}@localhost:3306/{}"
-    engine = create_engine(conection.format(username, password, db_name))
+    engine = create_engine(connection.format(username, password, db_name))
     Base.metadata.create_all(engine)
