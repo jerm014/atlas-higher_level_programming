@@ -40,8 +40,11 @@ def print_states(username, password, db_name, search):
         filter(State.name == search).all()
 
     # Print the results
-    for state in states:
-        print("{}".format(state.id))
+    if states:
+        for state in states:
+            print("{}".format(state.id))
+    else:
+        print("Not found")
 
     # Close the session
     session.close()
