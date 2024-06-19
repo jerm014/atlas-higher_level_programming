@@ -41,7 +41,7 @@ def print_states(username, password, db_name, search):
 
     # Print the results
     for state in states:
-        print(f"{state.id}: {state.name}")
+        print("{}".format(state.id))
 
     # Close the session
     session.close()
