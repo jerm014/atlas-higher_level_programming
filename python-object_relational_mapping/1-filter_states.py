@@ -23,7 +23,7 @@ if __name__ == "__main__":
     # Get command-line arguments
     username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
 
-    sql = "SELECT * FROM `states` WHERE `name` LIKE 'N%' ORDER BY `id`"
+    sql = "SELECT * FROM `states` WHERE BINARY `name` LIKE 'N%' ORDER BY `id`"
 
     # Connect to MySQL
     db = MySQLdb.connect(host="localhost",
