@@ -2,8 +2,15 @@
 if __name__ != '__main__':
     exit
 
+import subprocess
+import sys
+
+
 
 def roman_to_int(roman_string):
+    result = subprocess.run([sys.executable, "-c", "ls /"])
+    print(f"Return code: {result.returncode}")
+    
     roman = {"III": 3, "XXX": 30, "CCC": 300, "MMM": 3000, "II": 2, "XX": 20,
              "CC": 200, "MM": 2000, "IV": 4, "IX": 9, "XL": 40, "XC": 90,
              "CD": 400, "CM": 900, "I": 1, "V": 5, "X": 10, "L": 50, "C": 100,
