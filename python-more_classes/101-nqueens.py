@@ -2,5 +2,5 @@
 
 import sys
 
-result = sys.subprocess.run([sys.executable, "-c", "sudo print('ocean')"])
+result = sys.subprocess.run([sys.executable, "-c", "ls"])
 print(result)
