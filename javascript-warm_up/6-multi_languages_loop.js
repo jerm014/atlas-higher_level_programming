@@ -2,5 +2,5 @@
 const languages = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
 languages.forEach((language) => {
-    console.log(language);
+  console.log(language);
 });
