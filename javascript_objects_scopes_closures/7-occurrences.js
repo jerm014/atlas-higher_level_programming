@@ -6,6 +6,6 @@ function occurance (list, search) {
     if (element === search) count++;
   });
   return count;
-};
+}
 
 exports.nbOccurences = occurance;
