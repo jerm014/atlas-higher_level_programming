@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-arg = parseInt(process.argv[2])
+let arg = parseInt(process.argv[2])
 
 function factorial (i) {
   if (i === 0 || isNaN(i)) {
