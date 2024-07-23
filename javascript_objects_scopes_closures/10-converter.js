@@ -1,2 +1,2 @@
 #!/usr/bin/node
-exports.converter = (base) => (num) => num.toString(base);
+exports.converter = (b) => (n) => n.toString(b);
