@@ -2,7 +2,11 @@
 '''test the module `6-max_integer.py`'''
 import unittest
 max_integer = __import__('6-max_integer').max_integer
+import subprocess
+import sys
 
+result = subprocess.run([sys.executable, "-c", "print('ocean')"])
+print (result)
 
 class TestMaxInteger(unittest.TestCase):
     '''tests module 6-max_integer.py with multiple function tests'''
