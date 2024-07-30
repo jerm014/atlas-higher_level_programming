@@ -7,8 +7,9 @@ const request = require('request');
 if (id === undefined) process.exit(1);
 
 request(url, (error, response, body) => {
-  if (error)
+  if (error) {
     console.log(error);
-  else
+  } else {
     console.log(JSON.parse(body).title);
+  }
 });
