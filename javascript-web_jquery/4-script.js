@@ -1,4 +1,4 @@
-function toggle() {
+function toggle () {
   if ($('header').hasClass('green')) {
     $('header').removeClass('green').addClass('red');
   } else {
