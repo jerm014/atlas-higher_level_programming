@@ -1,6 +1,10 @@
 function makeRed() {
   if (document.readyState === 'complete')
-    document.querySelector('header').css('color', '#FF0000');
+  {
+    const style = document.createElement('style');
+    style.innerHTML = 'header { color: red; }';
+    document.head.appendChild(style);
+  }
 }
 
 document.onreadystatechange = makeRed;
