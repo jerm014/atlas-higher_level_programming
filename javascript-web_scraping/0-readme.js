@@ -2,7 +2,7 @@
 const filename = process.argv[2];
 const fs = require('fs');
 
-if (x === undefined)
+if (filename === undefined)
   return false;
 
 fs.readFile(filename, (err, data) => {
