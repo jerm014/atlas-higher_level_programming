@@ -3,7 +3,6 @@
 const id = process.argv[2];
 const url = 'https://swapi-api.hbtn.io/api/films/' + id;
 const request = require('request');
-let data = '';
 
 if (id === undefined) process.exit(1);
 
