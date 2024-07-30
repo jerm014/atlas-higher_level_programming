@@ -14,7 +14,7 @@ request(url, (error, response, body) => {
     results.forEach(node => {
       if (output[node.userId]) {
         output[node.userId] += 1;
-      } else { 
+      } else {
         output[node.userId] = 1;
       }
     });
