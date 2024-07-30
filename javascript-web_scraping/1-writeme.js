@@ -5,4 +5,4 @@ const fs = require('fs');
 
 if ((filename === undefined) || (data === undefined)) process.exit(1);
 
-fs.writeFile(filename, data, (err) => {if (err) console.log(err)});
+fs.writeFile(filename, data, (err) => { if (err) console.log(err); });
