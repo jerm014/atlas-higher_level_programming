@@ -20,9 +20,6 @@ function getLang() {
 
 function loader() {
   if (document.readyState === 'complete') {
-    $('#language_code').on('keypress', function(e) {
-      if (e.which === 13) getLang();
-    });
     $(':button').click(getLang);
     document.onreadystatechange = None;
   }
