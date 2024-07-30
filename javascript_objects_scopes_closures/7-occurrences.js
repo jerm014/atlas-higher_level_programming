@@ -2,9 +2,7 @@
 
 function occurance (list, search) {
   let count = 0;
-  list.forEach(element => {
-    if (element === search) count++;
-  });
+  list.forEach(element => { if (element === search) count++; });
   return count;
 }
 
