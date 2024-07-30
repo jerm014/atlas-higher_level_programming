@@ -13,7 +13,7 @@ request(url, (error, response, body) => {
     const data = JSON.parse(body).results;
     data.filter(df => df.characters.forEach(element => {
       if (element.indexOf('18') > 0) count++;
-    }))
-  };
+    }));
+  }
   console.log(count);
 });
