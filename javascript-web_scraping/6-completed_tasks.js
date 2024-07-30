@@ -2,6 +2,7 @@
 
 const url = process.argv[2];
 const request = require('request');
+let results;
 const output = {};
 
 if (url === undefined) process.exit(1);
