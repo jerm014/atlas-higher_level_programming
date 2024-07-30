@@ -1,0 +1,55 @@
+
+head of solutions architechture
+
+how do I priortize projects?
+how can i lower costs?
+
+creative generation and optimazation
+  chatbots
+  et al
+
+boost employee productivity and creativity
+  conversational search
+  summarization
+  content creation
+  code generation
+  data to insights
+
+optimize business processes
+  document processing
+  data augmentation
+  fraud detection
+  process optimization
+
+"data is your differentiator"
+(work backwrds from your data to figure out business value)
+
+
+look into:
+  zero-etl future so you can quickly connection all your data
+  end to end goverance capability
+
+
+apps:
+  amazon q business
+  amazon q developer
+  amazon q in quicksight  
+  amazon q in connect
+
+tools:
+guardrails | agents | customization capabilities
+
+intrastructure and foundation models (FMs):
+gpus trainum inferentia sagemaker ultraclusters efa ec2 capability blocks
+
+bedrock: build and scale gen ai apps with foundation models (FMs) 
+  [includes tools]
+
+  data on bedrock is isolated from the underlying model. guardrails are strict
+  by default.
+
+guardrails only filter output?
+
+predictive-generative workloads won't work for gen ai optimazation
+
+
